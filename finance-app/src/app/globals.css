@@ -1,5 +1,6 @@
 :root {
-  --primary-color: blue;
+  --primary-color: #0051ff;
+  --secundary-color: white;
 }
 
 * {

@@ -1,4 +1,4 @@
-# Desafio Bycoders Frontend
+# Desafio Bycoders Backend
 
 ## Projeto
 
@@ -7,6 +7,6 @@
 ## Get Starter
 
     * Clone este repositório
-    * Acesse a pasta `finance-app`
-    * Instale as dependências executando `npm install` no terminal
-    * Execute o projeto executando `npm run dev` no terminal
+    * Acesse a pasta `finance-api`
+    * Instale as dependências Maven
+    * Execute o projeto no arquivo `FinanceApiApplication.java`

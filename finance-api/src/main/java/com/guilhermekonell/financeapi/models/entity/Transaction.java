@@ -1,7 +1,6 @@
-package com.guilhermekonell.financeapi.models;
+package com.guilhermekonell.financeapi.models.entity;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import com.guilhermekonell.financeapi.models.enums.TransactionTypeEnum;
 
@@ -20,21 +19,14 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     private TransactionTypeEnum type;
-
     private LocalDate date;
-
     private Double amount;
-
     private String cpf;
-
     private String card;
-
-    private LocalTime time;
-
+    private String time;
     private String storeOwner;
-
     private String storeName;
     
 }

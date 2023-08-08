@@ -1,8 +1,5 @@
 package com.guilhermekonell.financeapi.controllers;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.guilhermekonell.financeapi.models.Transaction;
 import com.guilhermekonell.financeapi.services.CnabService;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("v1/cnab")
@@ -23,17 +18,14 @@ public class CnabController {
     private CnabService cnabService;
 
     @PostMapping("upload")
-    public ResponseEntity<List<Transaction>> uploadCnabFile(@RequestParam("file") MultipartFile file) throws IOException {
-        List<Transaction> transactions = cnabService.readCnabFile(file);
+    public ResponseEntity<Void> uploadCnabFile(@RequestParam("file") MultipartFile file) {
+        try {
+            cnabService.readCnabFile(file);
+        } catch (Exception exception) {
+            return ResponseEntity.badRequest().build();
+        }
     
-        return ResponseEntity.ok(transactions);
+        return ResponseEntity.ok().build();
     }
-
-    @GetMapping()
-    public ResponseEntity<List<Transaction>> getTransactions() {
-        return ResponseEntity.ok(cnabService.findAll());
-    }
-    
-    
     
 }

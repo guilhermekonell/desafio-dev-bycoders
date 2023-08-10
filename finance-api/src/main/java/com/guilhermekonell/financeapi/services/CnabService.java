@@ -45,8 +45,6 @@ public class CnabService {
                     transaction.setStoreOwner(line.substring(48, 62).trim());
                     transaction.setStoreName(line.substring(62, 80).trim());
 
-                    System.out.println(transaction.getDate());
-
                     return transaction;
                 }).toList();
 

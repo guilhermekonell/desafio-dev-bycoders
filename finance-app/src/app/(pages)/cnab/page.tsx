@@ -35,6 +35,7 @@ export default function CnabPage() {
 
     if (response.status !== 200) {
       toast.error("Não foi possível processar o arquivo selecionado");
+      setLoading(false);
       return;
     }
 
